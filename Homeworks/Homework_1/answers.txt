@@ -1,0 +1,32 @@
+for puzzle 1, one-key substitution:
+alphabet: 'a' to 'z'
+key = 5
+answer:
+
+this message is encrypted with a very simple cipher
+
+
+for puzzle 2, two-key substitution:
+alphabet: ' ', ',', '.', 'a' to 'z'
+key1 = 11, key2 = 19
+answer:
+
+alan mathison turing was an english mathematician, computer scientist, logician, cryptanalyst, philosopher, and theoretical biologist. turing was highly influential in the development of theoretical computer science, providing a formalisation of the concepts of algorithm and computation with the turing machine, which can be considered a model of a general purpose computer. he is widely considered to be the father of theoretical computer science and artificial intelligence.
+
+
+for puzzle 3, three-key substitution:
+alphabet: ',', '-', ' ', '.', 'A' to 'Z', 'a' to 'z', '0' to '9'
+key1 = 8 key2 = 10 key3 = 12
+answer:
+
+Vincent Willem van Gogh was a Dutch Post-Impressionist painter who posthumously became one of the most famous and influential figures in Western art history. In a decade, he created about 2,100 artworks, including around 860 oil paintings, most of which date from the last two years of his life. They include landscapes, still lifes, portraits and self-portraits, and are characterised by bold colours and dramatic, impulsive and expressive brushwork that contributed to the foundations of modern art. Not commercially successful in his career, he struggled with severe depression and poverty, which eventually led to his suicide at age thirty-seven.
+
+
+for puzzle 4, one-key substitution and then transposition with 39 rows and 10 columns:
+alphabet: ' ', '-', ',', '.', '0', 'a' to 'z'
+key = 9
+answer:
+
+an early opponent of security through obscurity was the locksmith alfred charles hobbs, who demonstrated to the public how state-of-the-art locks could be picked. in response to concerns that exposing security flaws in the design of locks could make them more vulnerable to criminals, he said rogues are very keen in their profession, and know already much more than we can teach them.
+
+for puzzle 5, the AES key is 
