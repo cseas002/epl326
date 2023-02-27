@@ -93,10 +93,10 @@ def three_key_substitution(msg, characters):
     """
     file = open('answers3.txt', 'w')
 
-    # answers = [[['0'] * len(characters) for _ in range(len(characters))] for _ in range(len(characters))]
+    answers = [[['0'] * len(characters) for _ in range(len(characters))] for _ in range(len(characters))]
 
     # initializing the answers matrix
-    for key in range(len(characters)):
+    for key in range(2):
         for key2 in range(len(characters)):
             for key3 in range(len(characters)):
                 decoded_message = ""  # the decoded string
@@ -114,9 +114,8 @@ def three_key_substitution(msg, characters):
                         decoded_message += find_char(key, characters, msg[i])  # substitute the three characters
                         decoded_message += find_char(key2, characters, msg[i + 1])
                         decoded_message += find_char(key3, characters, msg[i + 2])
-                # answers[key][key2][key3] = decoded_message
+                answers[key][key2][key3] = decoded_message
                 file.write("key1 = " + str(key) + " key2 = " + str(key2) + " key3 = " + str(key3) + '\n')
                 file.write(decoded_message)
-                file.close()
-
-    # return answers
+    file.close()
+    return answers

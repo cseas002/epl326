@@ -3,7 +3,6 @@ import decryption_methods
 
 def main():
     msg = open("./puzzles/puzzle3", 'r').read()  # save all the characters of a file in a string
-    length = len(msg) - 1  # except the new line character
 
     characters = [',', '-', ' ', '.']  # initializing the list
     for i in range(65, 91):
@@ -14,7 +13,9 @@ def main():
         characters.append(str(i))
     answers = decryption_methods.three_key_substitution(msg, characters)
 
-    # print(answers[8][10][12])
+    # If you want to print the results, uncomment these
+    # print(answers[8][10][12])  # the answer
+    #
     # for key1, arr in enumerate(answers):
     #     for key2, arr2 in enumerate(arr):
     #         for key3, answer in enumerate(arr2):
