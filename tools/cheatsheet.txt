@@ -1,0 +1,58 @@
+openssl help
+openssl enc help
+
+--------------------------AES-------------------------------------------
+encrypt:
+openssl aes-256-cbc -e/-a (-nosalt) -in secret-file -out secret-file.enc
+
+decrypt:
+openssl aes-256-cbc <-d, -d -base64> -in secret-file -out secret-file.enc
+
+example:
+echo "Hello world" | openssl aes-256-cbc/aes-256-ecb -a -k mypass 
+
+AES KEY 128,192, 256 bits
+
+
+------------------------------RSA--------------------------------------
+
+openssl genrsa help
+
+openssl genrsa -des3 -out private.pem 2048 (meta valleis to kleidi (passphrase))
+
+openssl rsa -in private.pem -out privatekey.pem // afaireis to passphrase
+
+openssl genrsa -out private.pem 2048 //xwris passphrase
+
+openssl rsa -in private.pem -pubout -out public.pem // finds public key from private key
+
+openssl rsa -noout -text -in private.pem // to see the parametrous
+
+-----for signature----- 
+
+openssl rsautl -sign -inkey private.pem -in sender.txt > filename.txt // encrypt with private key
+
+openssl rsautl -verify -inkey public.pem -pubin -in sender_enc_prv // decrypt 
+
+openssl rsautl -verify -inkey private.pem -in sender_enc_prv // decrypt 
+
+-----for encryption/decryption-----
+
+openssl rsautl -encrypt -inkey private.pem -in rcv.txt -out rcvpub.enc // encrypt
+
+openssl rsautl -encrypt -inkey public.pem -pubin -in rcv.txt -out rcvpub.enc2// encrypt
+
+openssl rsautl -decrypt -inkey private.pem -in rcvpub.enc -out rcvtext.dec // decrypt
+
+
+----------------------------------HASH------------------------------------------
+
+echo "Hello World" | openssl dgst -sha256
+
+openssl dgst -sha256 ./random.data
+
+openssl md5
+
+----------------------------------------------------------------------------------
+
+

