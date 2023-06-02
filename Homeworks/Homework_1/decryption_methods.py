@@ -96,7 +96,7 @@ def three_key_substitution(msg, characters):
     answers = [[['0'] * len(characters) for _ in range(len(characters))] for _ in range(len(characters))]
 
     # initializing the answers matrix
-    for key in range(2):
+    for key in range(len(characters)):
         for key2 in range(len(characters)):
             for key3 in range(len(characters)):
                 decoded_message = ""  # the decoded string
